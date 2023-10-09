@@ -17,6 +17,8 @@ export class App extends Component {
     filter: '',
   };
 
+  
+  // Додавання нового контакту в список контактів
   addContact = contact => {
     const isInContacts = this.state.contacts.some(
       ({ name }) => name.toLowerCase() === contact.name.toLowerCase()
@@ -31,12 +33,12 @@ export class App extends Component {
     }));
   };
 
-  
+
   changeFilter = event => {
     this.setState({ filter: event.target.value });
   };
 
-  
+  // Отримання відфільтрованих контактів
   getVisibleContacts = () => {
     const { filter, contacts } = this.state;
     const normalizedFilter = filter.toLowerCase();
